@@ -15,4 +15,21 @@ public class ArrayTests {
     int[] input1 = { };
     assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
   }
+  @Test
+  public void testReversedNotEmpty(){
+    int[] input = {1,2,3,4,5};
+    assertArrayEquals(new int[]{5,4,3,2,1}, ArrayExamples.reversed(input));
+  }
+  @Test
+  public void testReverseInPlaceNotEmpty(){
+    int[] input = {1,2,3,4,5};
+    ArrayExamples.reverseInPlace(input);
+    assertArrayEquals(new int[]{5,4,3,2,1}, input);
+  }
+  @Test
+  public void testAverageWithoutLowest(){
+    double[] input = new double[]{1.2, 1.2, 1.2, 1.2, 1.2};
+    double output = ArrayExamples.averageWithoutLowest(input);
+    assertEquals(1.2,output,0.0);
+  }
 }
